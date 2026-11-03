@@ -39,7 +39,7 @@ class TokensControllerTest {
     @Test
     void generateTokenReturnsOkWhenCredentialsValid() {
         var user = new User("john_doe", "hashedPassword");
-        user.setId(1L);
+
         var token = "jwt.token.value";
         when(userCommandService.handle(any(SignInCommand.class)))
                 .thenReturn(Result.success(new ImmutablePair<>(user, token)));

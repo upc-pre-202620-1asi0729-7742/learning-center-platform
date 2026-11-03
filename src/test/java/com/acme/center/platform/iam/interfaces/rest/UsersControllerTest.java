@@ -47,7 +47,7 @@ class UsersControllerTest {
     @Test
     void createUserReturnsCreatedWhenSuccessful() {
         var user = new User("jane_doe", "hashedPassword");
-        user.setId(2L);
+
         when(userCommandService.handle(any(SignUpCommand.class)))
                 .thenReturn(Result.success(user));
 
@@ -80,7 +80,7 @@ class UsersControllerTest {
     @Test
     void getAllUsersReturnsListOfUsers() {
         var user = new User("alice", "hashedPassword");
-        user.setId(3L);
+
         when(userQueryService.handle(any(GetAllUsersQuery.class))).thenReturn(List.of(user));
 
         ResponseEntity<List<UserResource>> response = usersController.getAllUsers();
@@ -94,7 +94,7 @@ class UsersControllerTest {
     @Test
     void getUserByIdReturnsUserWhenFound() {
         var user = new User("bob", "hashedPassword");
-        user.setId(4L);
+
         when(userQueryService.handle(any(GetUserByIdQuery.class))).thenReturn(Optional.of(user));
 
         ResponseEntity<UserResource> response = usersController.getUserById(4L);
