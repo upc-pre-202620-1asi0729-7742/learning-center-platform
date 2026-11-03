@@ -88,7 +88,7 @@ class UsersControllerTest {
         assertEquals(HttpStatus.OK, response.getStatusCode());
         assertNotNull(response.getBody());
         assertEquals(1, response.getBody().size());
-        assertEquals("alice", response.getBody().get(0).username());
+        assertEquals("alice", response.getBody().getFirst().username());
     }
 
     @Test
