@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ---
 
+## [1.1.2] - 2026-11-05
+
+### Added
+- **Project README**: Added `README.md` with project overview, architecture description, setup instructions, and development guidelines.
+- **Learning Domain Models**: Added initial domain models, queries, commands, and properties for the learning module.
+
+### Changed
+- **Test Improvements**: Updated test assertions to use `getFirst()` for username retrieval and removed redundant user ID assignments in token and user controller tests.
+- Added macOS-specific `.DS_Store` files to `.gitignore`.
+
+---
+
 ## [1.1.1] - 2026-10-30
 
 ### Added
@@ -62,3 +74,4 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Fixed
 - Fixed dropped domain events during aggregate persistence by ensuring all repository adapters publish pending events prior to clearing them.
 - Fixed typo in `@EventListener` target in `TutorialCompletedEventHandler`.
+
